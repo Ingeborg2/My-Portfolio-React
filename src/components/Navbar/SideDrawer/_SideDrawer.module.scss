@@ -1,0 +1,40 @@
+.navbar {
+  .navbar__list {
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+
+    li a {
+      text-decoration: none; 
+      text-transform: uppercase;
+      color: #FFF;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+  }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    .navbar__list {
+      width: 100%;
+      background-color: $primary-dark;;
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .navbar {
+    .navbar__list { 
+      width: 50%;
+      position: absolute;
+      right: 0;
+      background-color: $primary-dark;
+    }
+  }
+
+}
