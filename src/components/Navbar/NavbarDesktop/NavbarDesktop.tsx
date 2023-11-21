@@ -1,38 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import Logo from '../../../components/Logo';
+import Logo from '../../Logo/Logo';
 import LogoSvg from '../../../assets/logoipsum-216.svg';
+import NavbarList from "../NavbarList/NavbarList";
+import Button from "../../Button/Button";
 
 import classes from './_NavbarDesktop.module.scss';
 
 const NavbarDesktop = () => {
+
   return (
-    <nav className={classes["header__navbar-desktop"]}>
+    <nav className={classes.header__navbar}>
       <Logo image={{ src: LogoSvg, alt: "ipsum logo svg" }} className="navbar__logo" />
-      <ul className={classes.navbar__list}>
-          <li className={classes.navbar__item}>
-            <NavLink 
-              to="/"
-              className={`${classes["navbar__link"]} ({ isActive }) => (isActive ? 'navbar__linkactive' : '')}`}>
-                Home
-            </NavLink>
-          </li>
-          <li className={classes.navbar__item}>
-            <NavLink 
-              to="/about"
-              className={`${classes["navbar__link"]} ({ isActive }) => (isActive ? 'active' : '')}`}>
-                About
-            </NavLink>
-          </li>
-          <li className={classes.navbar__item}>
-            <NavLink 
-              to="/projects"
-              className={`${classes["navbar__link"]} ({ isActive }) => (isActive ? 'active' : '')}`}>
-                About
-            </NavLink>
-          </li>
-      </ul>
-      <button className={classes.navbar__contact}>Contact Me</button>
+      <NavbarList />
+      <Link to="./contact">
+          <Button classes={'navbar__contact'}>Contact Me</Button>
+        </Link>
     </nav>
   )
   

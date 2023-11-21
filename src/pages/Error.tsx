@@ -1,4 +1,4 @@
-import Topbar from '../components/Navbar/Topbar';
+import Topbar from '../components/Topbar/Topbar';
 
 const ErrorPage = () => {
   return (

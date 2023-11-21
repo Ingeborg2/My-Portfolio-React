@@ -1,11 +1,8 @@
-.header__navbar-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
+.header__navbar {
+    @extend %flex-layout;
     padding: 0.4rem 1rem;
     box-shadow: 0 5px 5px rgba(0,0,0,0.1);
-    
+
     .navbar__hamburger {     
         cursor: pointer;
         display: flex;
@@ -45,12 +42,6 @@
                 }
                 
             }
-    }
-
-    ul {
-        display: flex;
-        height: 100%;
-        background-color: $primary-dark;
     }
 }
 

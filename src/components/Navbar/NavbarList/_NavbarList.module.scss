@@ -1,0 +1,17 @@
+ul {
+    @extend %flex-layout;
+    font-family: $roboto, $sans-serif;
+
+    li {   
+        a {
+            text-decoration: none; 
+            font-size: 16px;
+            font-weight: 400;
+
+            &.active {
+                color: $primary-normal;
+            }
+        }
+        
+    }  
+}

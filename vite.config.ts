@@ -7,10 +7,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/styles/_App.scss";`,
-        /*modules: {
-          localsConvention: 'camelCase',
-        }*/
+        additionalData: `@import "./src/App.module.scss";`,
       }
     },    
   },

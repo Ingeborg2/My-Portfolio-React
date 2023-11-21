@@ -1,23 +1,27 @@
 import { Link } from 'react-router-dom';
+import NavbarList from '../NavbarList/NavbarList';
+import Button from '../../Button/Button';
 
 import classes from './_SideDrawer.module.scss';
 
-const SideDrawer = () => {
+type SideDrawerProps = {
+  close: () => void;
+}
+
+const SideDrawer = ({close} : SideDrawerProps) => {
     
   return (
-    <nav className={classes.navbar}>
-      <ul className={classes.navbar__list}>
-          <li className={classes.navbar__item}>
-            <Link className={classes.navbar__link} to="/">Home</Link>
-          </li>
-          <li className={classes.navbar__item}>
-            <Link className={classes.navbar__link} to="/about">About Me</Link>
-          </li>
-          <li className={classes.navbar__item}>
-            <Link className={classes.navbar__link} to="/projects">My Projects</Link>
-          </li>
-      </ul>
-    </nav>
+    <>
+      <div className={classes.sidedrawer}>
+        <NavbarList closeMenu={close} />
+        <Link to="./contact">
+          <Button classes={'navbar__contact'} onClick={close}>Contact Me</Button>
+        </Link>
+        
+      </div>
+    </>
+    
+    
     
   )
 }

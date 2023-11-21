@@ -1,5 +1,5 @@
-import NavbarMobile from "./NavbarMobile/NavbarMobile";
-import NavbarDesktop from "./NavbarDesktop/NavbarDesktop";
+import NavbarMobile from "../Navbar/NavbarMobile/NavbarMobile";
+import NavbarDesktop from "../Navbar/NavbarDesktop/NavbarDesktop";
 import useMediaQuery from "../../hooks/UseMediaQuery";
 
 import classes from './_Topbar.module.scss';

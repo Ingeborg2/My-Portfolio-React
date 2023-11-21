@@ -1,5 +1,6 @@
-@import './variables';
-@import './mixins';
+@import './styles/reset.scss';
+@import './styles/helpers/variables';
+@import './styles/helpers/mixins';
 
 * {
     box-sizing: border-box;
@@ -15,6 +16,12 @@ body, html {
     background-color: #FFF;
 }
 
+%flex-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 h1 {
     margin: 0;
     font-size: $font-size-h1;
@@ -23,11 +30,11 @@ h1 {
 }
 
 button {
+    cursor: pointer;
     font-size: $font-size-secondary;
     line-height: $line-height-secondary;
     font-weight: $normal;
     padding: 14px 32px;
-    background-color: #FFF;
     color: $primary-normal;
     border: 1px solid $primary-normal;
     border-radius: 5px;

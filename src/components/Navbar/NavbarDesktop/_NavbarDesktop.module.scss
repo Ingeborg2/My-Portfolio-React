@@ -1,34 +1,23 @@
-.header__navbar-desktop {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header__navbar {
+    @extend %flex-layout;
     background-color: #fff;
     padding: 0.4rem 1rem;
     box-shadow: 0 5px 5px rgba(0,0,0,0.1);
 
-    .navbar__list {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    ul {
+        @extend %flex-layout;
         gap: 1rem;
     
-            .navbar__item.active {
-                color: $primary-normal;
-            }
-            
-            .navbar__item:hover {
-                color: $primary-dark;
-            }
-            li.active {
-                color: $primary-normal;
-            }
-
-            
-    
             li {
+                
+                .active {
+                    color: $primary-normal;
+                }
+
+                :hover {
+                    color: $primary-dark;
+                }
+
                 a {
                     text-decoration: none; 
                     color: #210950;
@@ -36,17 +25,18 @@
                     font-size: 16px;
                     font-weight: 400;
                 }
-
-                a:hover {
-                    color: $primary-normal
-                }
             }
     }
 
-    .navbar__contact:hover {
-        color: #FFF;
-        background-color: $primary-normal;
+    .navbar__contact {
+        background-color: #FFF;
         border-color: $primary-normal;
+
+        &:hover {
+            color: #FFF;
+            background-color: $primary-normal;
+            border-color: $primary-normal;
+        }
     }
 }
 
