@@ -14,10 +14,12 @@ function App() {
       <Topbar />
       <div>
       <Routes>
-          <Route path="/" element={<HomePage />} errorElement={<ErrorPage/>} />
+          <Route index element={<HomePage />}/>
+          <Route path="/home" element={<HomePage />}></Route>
           <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<ErrorPage/>}></Route>
         </Routes>
       </div>
     </>

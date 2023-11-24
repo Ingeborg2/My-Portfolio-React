@@ -1,4 +1,4 @@
-import classes from './_Logo.module.scss';
+import logoScss from './_Logo.module.scss';
 
 type LogoProps = {
     image: {
@@ -11,8 +11,8 @@ type LogoProps = {
 const Logo = ({image, className}: LogoProps) => {
 
     return (
-        <div className={classes[className]}>
-            <img className={classes.logo__image} src={image.src} alt={image.alt} />
+        <div className={logoScss[className]}>
+            <img className={logoScss.logo__image} src={image.src} alt={image.alt} />
         </div>        
     )
 }

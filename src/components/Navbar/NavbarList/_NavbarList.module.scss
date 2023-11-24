@@ -1,17 +1,82 @@
-ul {
+/*.navbar__list {
     @extend %flex-layout;
     font-family: $roboto, $sans-serif;
+    align-items: stretch;
 
-    li {   
-        a {
+        .navbar__item {
             text-decoration: none; 
             font-size: 16px;
             font-weight: 400;
+            align-items: center;
+            padding: .25rem;
+        }  
+    } */
 
-            &.active {
-                color: $primary-normal;
+    .header-navbar__list {
+        @extend %flex-layout;
+        gap: 1.5rem;
+
+        .header-navbar__item {
+            font-size: $font-size-primary;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            :after {
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: 1px;
+                display: block;
+                transition: all 0.3s ease;
+                bottom: 25%;
+            }
+
+            :hover::after {
+                width: 75%;
+                height: 2px;
+                background-color: $primary-normal;
+            }
+
+            .header-navbar__link {
+                text-decoration: none; 
+                color: #210950;
+                font-family: 'Roboto', sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                display: flex;
+                height: 100%;
+
+                &.active {
+                    color: $primary-normal;
+                }
+
+                
             }
         }
         
-    }  
-}
+    }
+
+    .sidedrawer-navbar__list {
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;  
+        align-items: center;
+
+        .sidedrawer-navbar__item {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 0;
+            .sidedrawer-navbar__link {
+                color: #FFF;
+                text-transform: uppercase;
+            }
+        }
+
+        .sidedrawer-navbar__item:has(.sidedrawer-navbar__link.active) {
+            background-color: $primary-normal;
+        }
+        
+    }

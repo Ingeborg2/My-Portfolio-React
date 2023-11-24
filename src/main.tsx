@@ -5,8 +5,8 @@ import App from './App.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
+    <BrowserRouter basename={import.meta.env.DEV ? '/' : '/My-Portfolio-React/'}>
+      <App />
     </BrowserRouter> 
   </React.StrictMode>,
 )

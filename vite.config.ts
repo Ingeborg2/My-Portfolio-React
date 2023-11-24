@@ -7,9 +7,10 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./src/App.module.scss";`,
-      }
+        additionalData: `@import "./src/App.scss";`,
+        
+      },
     },    
   },
-  base: "/My-Portfolio-React"
+  base: "/My-Portfolio-React/"
 })

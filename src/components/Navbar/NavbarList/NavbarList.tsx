@@ -1,35 +1,63 @@
 import { NavLink } from 'react-router-dom';
-import classes from './_NavbarList.module.scss';
+import NavbarListScss from './_NavbarList.module.scss';
 
 type NavbarListProps = {
   closeMenu?: () => void;
+  prefix: string;
 }
 
-const NavbarList = ({closeMenu} : NavbarListProps) => {
-  return (
-    <ul className={classes.navbar__list}>
-        <li className={classes.navbar__item} onClick={closeMenu}>
+const NavbarList = ({closeMenu, prefix} : NavbarListProps) => {
+  const listSelector = `${prefix}__list`;
+  const itemSelector = `${prefix}__item`;
+  const linkSelector = `${prefix}__link`;
+
+  return (   
+    <ul className={NavbarListScss[listSelector]}>
+        <li className={NavbarListScss[itemSelector]} onClick={closeMenu}>
             <NavLink 
               to="/"
-              className={({ isActive }) => (isActive ? 'navbar__link active' : 'navbar__link')}>
+              end
+              className={({ isActive }) =>
+                [
+                  NavbarListScss[linkSelector],
+                  isActive ? NavbarListScss.active : null
+                ]
+                  .filter(Boolean)
+                  
+                  .join(" ")
+              }>
                 Home
             </NavLink>
           </li>
-          <li className={classes.navbar__item} onClick={closeMenu}>
+          <li className={NavbarListScss[itemSelector]} onClick={closeMenu}>
             <NavLink 
               to="/about"
-              className={({ isActive }) => (isActive ? 'navbar__link active' : 'navbar__link')}>
+              className={({ isActive }) =>
+                [
+                  NavbarListScss[linkSelector],
+                  isActive ? NavbarListScss.active : null
+                ]
+                  .filter(Boolean)
+                  .join(" ")
+              }>
                 About
             </NavLink>
           </li>
-          <li className={classes.navbar__item} onClick={closeMenu}>
+          <li className={NavbarListScss[itemSelector]} onClick={closeMenu}>
             <NavLink 
               to="/projects"
-              className={({ isActive }) => (isActive ? 'navbar__link active' : 'navbar__link')}>
+              className={({ isActive }) =>
+                [
+                  NavbarListScss[linkSelector],
+                  isActive ? NavbarListScss.active : null
+                ]
+                  .filter(Boolean)
+                  .join(" ")
+              }>
                 Projects
             </NavLink>
           </li>
-    </ul>
+    </ul>    
   )
 }
 

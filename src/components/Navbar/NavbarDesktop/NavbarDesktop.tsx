@@ -5,16 +5,16 @@ import LogoSvg from '../../../assets/logoipsum-216.svg';
 import NavbarList from "../NavbarList/NavbarList";
 import Button from "../../Button/Button";
 
-import classes from './_NavbarDesktop.module.scss';
+import navbarDesktopScss from './_NavbarDesktop.module.scss';
 
 const NavbarDesktop = () => {
 
   return (
-    <nav className={classes.header__navbar}>
+    <nav className={navbarDesktopScss.header__navbar}>
       <Logo image={{ src: LogoSvg, alt: "ipsum logo svg" }} className="navbar__logo" />
-      <NavbarList />
+      <NavbarList prefix="header-navbar"/>
       <Link to="./contact">
-          <Button classes={'navbar__contact'}>Contact Me</Button>
+          <Button classes={navbarDesktopScss["header-navbar__contact"]}>Contact Me</Button>
         </Link>
     </nav>
   )

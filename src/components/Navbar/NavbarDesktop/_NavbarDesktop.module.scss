@@ -1,34 +1,10 @@
 .header__navbar {
     @extend %flex-layout;
     background-color: #fff;
-    padding: 0.4rem 1rem;
+    padding: 0.4rem 1.5rem;
     box-shadow: 0 5px 5px rgba(0,0,0,0.1);
 
-    ul {
-        @extend %flex-layout;
-        gap: 1rem;
-    
-            li {
-                
-                .active {
-                    color: $primary-normal;
-                }
-
-                :hover {
-                    color: $primary-dark;
-                }
-
-                a {
-                    text-decoration: none; 
-                    color: #210950;
-                    font-family: 'Roboto', sans-serif;
-                    font-size: 16px;
-                    font-weight: 400;
-                }
-            }
-    }
-
-    .navbar__contact {
+    .header-navbar__contact {
         background-color: #FFF;
         border-color: $primary-normal;
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Logo from '../../Logo/Logo';
 import LogoSvg from '../../../assets/logoipsum-216.svg';
 
-import classes from './_NavbarMobile.module.scss';
+import navbarMobileScss from './_NavbarMobile.module.scss';
 import SideDrawer from '../../Navbar/SideDrawer/SideDrawer';
 
 const NavbarMobile = () => {
@@ -12,14 +12,14 @@ const NavbarMobile = () => {
 
   return (
     <>
-        <nav className={classes.header__navbar}>
+        <nav className={navbarMobileScss.header__navbar}>
         <Logo image={{ src: LogoSvg, alt: "ipsum logo svg" }} className="navbar__logo" />
         <a 
-            className={`${classes["navbar__hamburger"]} ${isOpen ? classes.active : ''}`} 
+            className={`${navbarMobileScss["navbar__hamburger"]} ${isOpen ? navbarMobileScss.active : ''}`} 
             onClick={() => { setIsOpen(!isOpen) }}>
-            <div className={classes.hamburger__line}></div>
-            <div className={classes.hamburger__line}></div>
-            <div className={classes.hamburger__line}></div>
+            <div className={navbarMobileScss.hamburger__line}></div>
+            <div className={navbarMobileScss.hamburger__line}></div>
+            <div className={navbarMobileScss.hamburger__line}></div>
         </a>
         </nav>
         {isOpen &&
